@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int countPrimes(int n) {
+        
+    unordered_map<int, int> map;
+       for(int i=2; i<n; i++)
+           map[i]++;
+        for(int i=2; i<sqrt(n);i++){
+            for(int j=i*i; j<n; j+=i)
+            {
+              if(map.find(j)!=map.end())
+                  map.erase(j);
+            }
+        }
+        return map.size();
+    }
+};
