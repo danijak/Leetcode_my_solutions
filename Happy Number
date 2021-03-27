@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+    unordered_map<int, int>map;
+        int sum;
+    while(sum!=1)
+    {
+         sum =0;
+        while(n>0)    
+        {
+        int digit=n%10;
+        sum= sum+digit*digit;
+        n=n/10;
+        }
+        n=sum;
+        map[sum]++;
+        if(map.find(sum)->second>1)
+            return false;
+    }
+        return true;
+    }
+    
+};
