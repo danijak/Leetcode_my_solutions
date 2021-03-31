@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int thirdMax(vector<int>& nums) {
+        set<int> s;
+        for(int i=0; i<nums.size(); i++)
+        {
+            s.insert(nums[i]);
+        }
+        int count =0;
+        int max=0;
+        int len=s.size()-2;
+        for(std::set<int> ::iterator it=s.begin(); it !=s.end(); it++)
+        {
+            max=*it;
+            count++;
+            if(count==len)
+                break;
+            
+        }
+        return max;
+
+    
+    }
+};
